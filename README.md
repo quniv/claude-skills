@@ -17,7 +17,6 @@ Or symlink individual files if you only want some of them.
 | Command | Purpose |
 |---|---|
 | `/architect` | Runs a structured Q&A discovery session for a new project, then produces a full set of architecture documents. |
-| `/ask` | Quick-answer mode — answers a question directly with no file changes or follow-up actions. |
 | `/commit` | Stages changes, writes a commit message, confirms the branch, and optionally pushes. |
 | `/custom` | Meta-builder for Claude Code customizations — creates or edits skills, hooks, settings, agents, or CLAUDE.md files through a guided plan-then-execute flow. |
 | `/done` | Closes out the current feature worktree: cleans up, updates the tracker, and preps for the next task. |
