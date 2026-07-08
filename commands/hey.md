@@ -8,6 +8,19 @@ Arguments (optional): $ARGUMENTS — if provided, narrow the check to a specific
 
 ---
 
+## Phase 0 — Check for pull
+
+- Run `git fetch` and `git status --short --branch` to see if the current branch is behind
+  its upstream.
+- If behind: ask the user via `AskUserQuestion` whether to pull latest before investigating.
+  Options: "Pull first" (recommended if behind) / "Investigate as-is".
+- If the user chooses to pull, run `git pull` (fast-forward only — if it's not a clean
+  fast-forward, abort the pull and report why, don't force or rebase), then continue to
+  Phase 1 against the fresh state.
+- If not behind, or there's no upstream to compare against, skip this step silently — don't ask.
+
+---
+
 ## Phase 1 — Gather
 
 Run these in parallel where possible. Don't ask permission — everything here is read-only.
