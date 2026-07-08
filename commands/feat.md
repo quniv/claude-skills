@@ -113,3 +113,20 @@ For non-trivial plans (>3 subtasks or risky/destructive steps), confirm with the
 | `general-purpose` | Multi-step research, complex analysis, writing, cross-file tasks |
 | `cicd-engineer` | CI/CD pipelines: GitHub Actions, Azure DevOps, GitLab CI, Jenkins |
 | `claude` | Catch-all — tasks that don't fit a specialist |
+
+---
+
+## Phase 4 — Wrap Up
+
+Once implementation is complete and verified (build passes, tests green, changes match the plan):
+
+1. Summarize what changed — files touched, what was added/removed/modified, and why
+2. Do **not** create the PR yourself — no `gh pr create`, no push beyond what implementation required
+3. Prompt the user to run `/pr` themselves:
+   > "Implementation done and verified. Run `/pr` when you're ready to open the pull request — it handles branch push, PR templating, and readiness checks."
+
+---
+
+## Rules
+
+- **Never create or push a PR from this workflow** — PR creation is `/pr`'s job. When the task is finished, hand off by asking the user to run `/pr`.

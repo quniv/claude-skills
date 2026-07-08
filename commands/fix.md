@@ -131,6 +131,17 @@ Keep this section short. If there's nothing worth flagging, skip it entirely.
 
 ---
 
+## Phase 6 — Wrap Up
+
+Once the fix is applied, verified, and any follow-ups are surfaced:
+
+1. Confirm the fix resolves the reported issue and summarize what changed
+2. Do **not** create the PR yourself — no `gh pr create`, no push beyond what the fix required
+3. Prompt the user to run `/pr` themselves:
+   > "Fix applied and verified. Run `/pr` when you're ready to open the pull request — it handles branch push, PR templating, and readiness checks."
+
+---
+
 ## Rules
 
 - **Never edit files before getting confirmation in Phase 3.**
@@ -138,3 +149,4 @@ Keep this section short. If there's nothing worth flagging, skip it entirely.
 - If `$ARGUMENTS` is empty, ask the user what to fix before starting Phase 0.
 - If the issue is ambiguous (could be multiple root causes), say so and ask one clarifying question before investigating.
 - For destructive changes (deleting files, dropping tables, force-pushing), flag explicitly and require explicit confirmation.
+- **Never create or push a PR from this workflow** — PR creation is `/pr`'s job.
